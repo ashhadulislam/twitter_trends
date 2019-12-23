@@ -3,7 +3,6 @@ import config
 from flask import Flask,render_template
 appication = Flask(__name__)
 import os
-
 import yweather
 
 
