@@ -1,7 +1,7 @@
 from twitter import *
 import config
 from flask import Flask,render_template
-app = Flask(__name__)
+appication = Flask(__name__)
 import os
 
 import yweather
@@ -9,7 +9,7 @@ import yweather
 
 
 
-@app.route('/')
+@appication.route('/')
 def hello():
     twitter = Twitter(auth = OAuth(os.environ.get('access_key'),
                   os.environ.get('access_secret'),
@@ -29,8 +29,8 @@ def hello():
     for location in results:
         for trend in location["trends"]:
             print(" - %s" % trend["name"])
-            list_of_trends.append(trend["name"])    
+            list_of_trends.appicationend(trend["name"])    
     return render_template('index.html', trends=list_of_trends)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    appication.run(debug=True)
