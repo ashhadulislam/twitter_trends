@@ -1,14 +1,14 @@
 from twitter import *
 import config
 from flask import Flask,render_template
-appication = Flask(__name__)
+app = Flask(__name__)
 import os
 import yweather
 
 
 
 
-@appication.route('/')
+@app.route('/')
 def hello():
     twitter = Twitter(auth = OAuth(os.environ.get('access_key'),
                   os.environ.get('access_secret'),
@@ -32,4 +32,4 @@ def hello():
     return render_template('index.html', trends=list_of_trends)
 
 if __name__ == '__main__':
-    appication.run(debug=True)
+    app.run(debug=True)
