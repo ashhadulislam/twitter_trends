@@ -29,7 +29,7 @@ def hello():
     for location in results:
         for trend in location["trends"]:
             print(" - %s" % trend["name"])
-            list_of_trends.appicationend(trend["name"])    
+            list_of_trends.append(trend["name"])    
     return render_template('index.html', trends=list_of_trends)
 
 if __name__ == '__main__':
